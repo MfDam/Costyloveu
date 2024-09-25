@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserisci il codice</title>
+    <style>
+        /* Stili generali per la pagina */
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #00FFCC; /* Verde acqua */
+            color: #ffffff; /* Colore del testo */
+            height: 100vh; /* Altezza del body pari all'intera finestra */
+            display: flex;
+            justify-content: center; /* Centra orizzontalmente */
+            align-items: center; /* Centra verticalmente */
+            margin: 0; /* Elimina i margini predefiniti */
+        }
+
+        /* Stile del contenitore */
+        .container {
+            background-color: #ffffff; /* Sfondo bianco del contenitore */
+            border-radius: 20px;
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stile del titolo */
+        h1 {
+            color: #004d40; /* Colore verde scuro */
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Stile dell'input */
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            border: 2px solid #ff4081; /* Bordo rosa amore */
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Stile del pulsante */
+        button {
+            padding: 10px 20px;
+            background-color: #ff4081; /* Rosa amore */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f06292; /* Colore rosa chiaro al passaggio del mouse */
+        }
+
+        /* Stile del messaggio di risultato */
+        #risultato {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Inserisci il codice</h1>
+        <input type="text" id="codice" placeholder="Inserisci il codice">
+        <button onclick="verificaCodice()">Verifica</button>
+        <p id="risultato"></p>
+    </div>
+
+    <script>
+        function verificaCodice() {
+            const codiceInserito = document.getElementById('codice').value;
+            const codiceCorretto = 'occhioni';  // Il codice che l'utente deve inserire
+            const parolaSegreta = 'Ti amo e ti amerò per sempre';  // La parola che verrà rivelata
+
+            if (codiceInserito === codiceCorretto) {
+                document.getElementById('risultato').textContent = 'Ricordati sempre che ' + parolaSegreta;
+            } else {
+                document.getElementById('risultato').textContent = 'Codice errato, riprova.';
+            }
+        }
+    </script>
+</body>
+</html>
